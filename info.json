@@ -1,0 +1,10 @@
+{
+  "name": "mojo-exploration",
+  "version": "0.1",
+  "title": "mojo-exploration",
+  "author": "mojo2012",
+  "homepage": "",
+  "dependencies": ["base >= 0.13"],
+  "factorio_version": "0.13",
+  "description": ""
+}
