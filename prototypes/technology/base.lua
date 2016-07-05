@@ -1,0 +1,1 @@
+require("prototypes.technology.ancient-artifacts")

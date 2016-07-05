@@ -17,17 +17,30 @@ global.exploration = {
 		[4] = "ancient-ruin-4",
 	},
 	findable_items = {
-		[1] = nil,
-		[2] = { name = "assembling-machine-1", count = 1},
-		[3] = nil,
-		[4] = nil,
-		[5] = { name = "assembling-machine-1", count = 1},
-		[6] = { name = "assembling-machine-3", count = 1},
-		[7] = nil,
-		[8] = { name = "assembling-machine-1", count = 1},
-		[9] = nil,
-		[10] = { name = "assembling-machine-2", count = 1},
+		[1]  = nil,
+		[2]  = { name = "tesla-turret", count = 1},
+		[3]  = nil,
+		[4]  = nil,
+		[5]  = { name = "alien-artifact", count = 1},
+		[6]  = { name = "alien-artifact", count = 4},
+		[7]  = nil,
+		[8]  = { name = "alien-artifact", count = 1},
+		[9]  = nil,
+		[10] = { name = "tesla-turret", count = 1},
+		[11] = nil,
+		[12] = nil,
+		[13] = nil,
+		[14] = nil,
+		[15] = nil,
+		[16] = nil,
+		[17] = { name = "tesla-turret", count = 1},
+		[18] = nil,
+		[19] = nil,
+		[20] = nil,
 	},
+	player_status = {
+		last_minded_entity = nil
+	}
 
 }
 
@@ -48,6 +61,24 @@ Event.register(defines.events.on_player_created, function(event)
 
 end)
 
+-- record the last mined ruin entity
+Event.register(defines.events.on_preplayer_mined_item, function(event)
+	if event.entity.name == "ancient-ruin-placeholder" then
+		global.exploration.last_minded_entity = event.entity
+	end
+end)
+
+-- if the user mines a ruin resource, this resource is removed from the map
+-- (so that graves can only be looted once)
+Event.register(defines.events.on_player_mined_item, function(event)
+	if global.exploration.last_minded_entity ~= nil then
+		
+		global.exploration.last_minded_entity.destroy()
+		global.exploration.last_minded_entity = nil
+		
+	end
+end)
+
 -- on chunk generation
 -- we check for new ruin resources, and create ruin entities
 
@@ -59,7 +90,7 @@ Event.register(defines.events.on_chunk_generated, function(event)
 	local foundRuins = surface.find_entities_filtered{area = chunkArea, name = "ancient-ruin-placeholder"}
 
 	if #foundRuins > 0 then
-		global.logger.log("found ruins " .. #foundRuins)
+		--global.logger.log("found ruins " .. #foundRuins)
 
 		placeRuins(foundRuins, surface, chunkArea)
 		
@@ -94,7 +125,7 @@ function placeRuins(ruins, surface, area)
 		amount = 1
 	}
 
-	if surface.can_place_entity(ruinToPlace) then
+	if nonCollidingPosition ~= nil and surface.can_place_entity(ruinToPlace) then
 		local ruinEntity = surface.create_entity(ruinToPlace)
 
 		placeArtefacts(ruinEntity)
