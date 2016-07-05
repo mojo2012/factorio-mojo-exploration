@@ -23,8 +23,8 @@ data:extend({
 		map_grid = false,
 		collision_box = {{ -0.1, -0.1}, {0.1, 0.1}},
 		selection_box = {{ -0.5, -0.5}, {0.5, 0.5}},
-		minimum = 1500,
-		normal = 15000,
+		minimum = 1,
+		normal = 5,
 		order="a-b-f",
 		icon = "__mojo-exploration__/graphics/empty.png",
 		stage_counts = {0},
@@ -78,16 +78,103 @@ data:extend({
 				percent = 80
 			}
 		},
-		collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
-		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+		collision_box = {{-5, -5}, {5, 5}},
+		selection_box = {{-5, -5}, {5, 5}},
 		fast_replaceable_group = "container",
 		inventory_size = 32,
 		vehicle_impact_sound =	{ filename = "__base__/sound/car-stone-impact.ogg", volume = 0.65 },
 		picture = {
 			filename = "__mojo-exploration__/graphics/entity/ancient-ruin-1.png",
 			priority = "extra-high",
-			width = 200,
-			height = 200,
+			width = 400,
+			height = 400,
+			shift = {0.1875, 0}
+		},
+	},
+	{
+		type = "container",
+		name = "ancient-ruin-2",
+		icon = "__mojo-exploration__/graphics/empty.png",
+		flags = {"placeable-neutral" },
+		max_health = 1000,
+		corpse = "medium-remnants",
+		order="a-b-f",
+		open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
+		close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
+		resistances = {
+			{
+				type = "fire",
+				percent = 80
+			}
+		},
+		collision_box = {{-5, -5}, {5, 5}},
+		selection_box = {{-5, -5}, {5, 5}},
+		fast_replaceable_group = "container",
+		inventory_size = 32,
+		vehicle_impact_sound =	{ filename = "__base__/sound/car-stone-impact.ogg", volume = 0.65 },
+		picture = {
+			filename = "__mojo-exploration__/graphics/entity/ancient-ruin-1.png",
+			priority = "extra-high",
+			width = 400,
+			height = 400,
+			shift = {0.1875, 0}
+		},
+	},
+	{
+		type = "container",
+		name = "ancient-ruin-3",
+		icon = "__mojo-exploration__/graphics/empty.png",
+		flags = {"placeable-neutral" },
+		max_health = 1000,
+		corpse = "medium-remnants",
+		order="a-b-f",
+		open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
+		close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
+		resistances = {
+			{
+				type = "fire",
+				percent = 80
+			}
+		},
+		collision_box = {{-5, -5}, {5, 5}},
+		selection_box = {{-5, -5}, {5, 5}},
+		fast_replaceable_group = "container",
+		inventory_size = 32,
+		vehicle_impact_sound =	{ filename = "__base__/sound/car-stone-impact.ogg", volume = 0.65 },
+		picture = {
+			filename = "__mojo-exploration__/graphics/entity/ancient-ruin-1.png",
+			priority = "extra-high",
+			width = 400,
+			height = 400,
+			shift = {0.1875, 0}
+		},
+	},
+	{
+		type = "container",
+		name = "ancient-ruin-4",
+		icon = "__mojo-exploration__/graphics/empty.png",
+		flags = {"placeable-neutral" },
+		max_health = 1000,
+		corpse = "medium-remnants",
+		order="a-b-f",
+		open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
+		close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
+		resistances = {
+			{
+				type = "fire",
+				percent = 80
+			}
+		},
+		collision_box = {{-5, -5}, {5, 5}},
+		selection_box = {{-5, -5}, {5, 5}},
+		fast_replaceable_group = "container",
+		inventory_size = 32,
+		vehicle_impact_sound =	{ filename = "__base__/sound/car-stone-impact.ogg", volume = 0.65 },
+		picture = {
+			filename = "__mojo-exploration__/graphics/entity/ancient-ruin-1.png",
+			priority = "extra-high",
+			width = 400,
+			height = 400,
 			shift = {0.1875, 0}
 		},
 	},
