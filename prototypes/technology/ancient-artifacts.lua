@@ -3,7 +3,7 @@ data:extend({
 		type = "technology",
 		name = "tesla-turrets",
 		icon = "__base__/graphics/technology/laser-turrets.png",
-		hidden = true,
+		enabled = false,
 		effects = {
 			{
 				type = "unlock-recipe",
