@@ -1,0 +1,2 @@
+ideas:
+* alien modules (eg. shields, ultra fast production, etc)
